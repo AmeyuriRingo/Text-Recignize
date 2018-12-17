@@ -81,6 +81,7 @@ PODS:
   - GTMSessionFetcher/Core (1.2.0)
   - GTMSessionFetcher/Full (1.2.0):
     - GTMSessionFetcher/Core (= 1.2.0)
+  - KeyboardHideManager (1.2.0)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -92,6 +93,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/MLVision
   - Firebase/MLVisionTextModel
+  - KeyboardHideManager (~> 1.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -108,6 +110,7 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GoogleUtilities
     - GTMSessionFetcher
+    - KeyboardHideManager
     - nanopb
     - Protobuf
 
@@ -125,9 +128,10 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GoogleUtilities: abb092d2c12e817fa3e0e7b274987dd72fb86ec3
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
+  KeyboardHideManager: 49ca33b24a1000f85c6667c98459e20c231e7d54
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
 
-PODFILE CHECKSUM: 9a404cd143e7a337677dc9bb17b7cb31900a1c8f
+PODFILE CHECKSUM: 9fc3ee72285a2c74c035c0e52dfabefb09539e15
 
 COCOAPODS: 1.6.0.beta.2

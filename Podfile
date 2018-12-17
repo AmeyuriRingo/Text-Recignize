@@ -12,7 +12,8 @@ target 'Text Recignize' do
   target 'Text RecignizeUITests' do
     inherit! :search_paths
   end
-
+  
+   pod 'KeyboardHideManager', '~> 1.0'
    pod 'Firebase/Core'
    pod 'Firebase/MLVision'
    pod 'Firebase/MLVisionTextModel'
