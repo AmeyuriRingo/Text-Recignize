@@ -11,9 +11,11 @@ import AVFoundation
 import Firebase
 import FirebaseMLVision
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate,
-UINavigationControllerDelegate {
-    var newImage: UIImage!
+class ViewController: UIViewController, UINavigationControllerDelegate {
+    
+    @IBOutlet weak var recognizedText: UITextView!
+    @IBOutlet weak var imageView: UIImageView!
+    private var newImage: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +23,7 @@ UINavigationControllerDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    @objc func keyboardWillShow(notification: NSNotification) {
+    @objc private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
                 self.view.frame.origin.y -= keyboardSize.height
@@ -29,7 +31,7 @@ UINavigationControllerDelegate {
         }
     }
     
-    @objc func keyboardWillHide(notification: NSNotification) {
+    @objc private func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
@@ -42,45 +44,19 @@ UINavigationControllerDelegate {
         imagePickerController.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
         
     }
-    
-    @IBOutlet weak var recognizedText: UITextView!
-    @IBOutlet weak var imageView: UIImageView!
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-       guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+}
 
+extension ViewController: UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+            
         }
         newImage = selectedImage
-        image()
+        TextRecognizer.textRecognize(image: newImage) { [weak self] text in
+            self?.recognizedText.text = text
+        }
+        self.imageView.image = newImage
         dismiss(animated: true, completion: nil)
     }
-    
-    func image (){
-
-        let vision = Vision.vision()
-        let options = VisionCloudTextRecognizerOptions()
-        options.languageHints = ["en", "ru"]
-        let textRecognizer = vision.cloudTextRecognizer(options: options)
-        
-        let image = VisionImage(image: self.newImage)
-        self.imageView.image = self.newImage
-        
-        textRecognizer.process(image) { result, error in
-            guard error == nil, let result = result else {
-                return
-            }
-
-            let resultText = result.text
-            debugPrint(resultText)
-            self.recognizedText.text = resultText
-            
-            }
-        }
-    }
-    
-
-
-
-
-
+}

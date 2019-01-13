@@ -17,7 +17,7 @@
 		9F5930E121BD676D00BC8820 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F5930DF21BD676D00BC8820 /* LaunchScreen.storyboard */; };
 		9F5930EC21BD676D00BC8820 /* Text_RecignizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5930EB21BD676D00BC8820 /* Text_RecignizeTests.swift */; };
 		9F5930F721BD676D00BC8820 /* Text_RecignizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5930F621BD676D00BC8820 /* Text_RecignizeUITests.swift */; };
-		9F59310521BD6F6600BC8820 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F59310421BD6F6600BC8820 /* GoogleService-Info.plist */; };
+		9FCDA0C821E4F80F0091DC6B /* TextParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCDA0C721E4F80F0091DC6B /* TextParse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +56,8 @@
 		9F5930F221BD676D00BC8820 /* Text RecignizeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Text RecignizeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5930F621BD676D00BC8820 /* Text_RecignizeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text_RecignizeUITests.swift; sourceTree = "<group>"; };
 		9F5930F821BD676D00BC8820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F59310421BD6F6600BC8820 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9FCDA0C721E4F80F0091DC6B /* TextParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextParse.swift; sourceTree = "<group>"; };
+		9FCDA0CB21E8833C0091DC6B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB092AD8561677F3A7D78A0E /* Pods-Text RecignizeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Text RecignizeTests.debug.xcconfig"; path = "Target Support Files/Pods-Text RecignizeTests/Pods-Text RecignizeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DFA9AAE2C15925015268314C /* Pods_Text_RecignizeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Text_RecignizeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79B9CE5848C1F1A12CA0747 /* Pods_Text_Recignize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Text_Recignize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,11 +132,11 @@
 			children = (
 				9F5930D621BD676800BC8820 /* AppDelegate.swift */,
 				9F5930D821BD676800BC8820 /* ViewController.swift */,
+				9FCDA0CA21E883310091DC6B /* Plists */,
+				9FCDA0C921E5E8E00091DC6B /* Service */,
 				9F5930DA21BD676800BC8820 /* Main.storyboard */,
 				9F5930DD21BD676D00BC8820 /* Assets.xcassets */,
 				9F5930DF21BD676D00BC8820 /* LaunchScreen.storyboard */,
-				9F5930E221BD676D00BC8820 /* Info.plist */,
-				9F59310421BD6F6600BC8820 /* GoogleService-Info.plist */,
 			);
 			path = "Text Recignize";
 			sourceTree = "<group>";
@@ -158,6 +159,23 @@
 			path = "Text RecignizeUITests";
 			sourceTree = "<group>";
 		};
+		9FCDA0C921E5E8E00091DC6B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				9FCDA0C721E4F80F0091DC6B /* TextParse.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		9FCDA0CA21E883310091DC6B /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				9F5930E221BD676D00BC8820 /* Info.plist */,
+				9FCDA0CB21E8833C0091DC6B /* GoogleService-Info.plist */,
+			);
+			path = Plists;
+			sourceTree = "<group>";
+		};
 		C507116296DDC7F2D3B88372 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +194,7 @@
 			buildConfigurationList = 9F5930FB21BD676D00BC8820 /* Build configuration list for PBXNativeTarget "Text Recignize" */;
 			buildPhases = (
 				B4D14BDA843AE7168804A73F /* [CP] Check Pods Manifest.lock */,
+				9FCC39E721C8CA59007D6637 /* ShellScript */,
 				9F5930CF21BD676800BC8820 /* Sources */,
 				9F5930D021BD676800BC8820 /* Frameworks */,
 				9F5930D121BD676800BC8820 /* Resources */,
@@ -278,7 +297,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F5930E121BD676D00BC8820 /* LaunchScreen.storyboard in Resources */,
-				9F59310521BD6F6600BC8820 /* GoogleService-Info.plist in Resources */,
 				9F5930DE21BD676D00BC8820 /* Assets.xcassets in Resources */,
 				9F5930DC21BD676800BC8820 /* Main.storyboard in Resources */,
 			);
@@ -357,6 +375,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9FCC39E721C8CA59007D6637 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		B4D14BDA843AE7168804A73F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -430,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FCDA0C821E4F80F0091DC6B /* TextParse.swift in Sources */,
 				9F5930D921BD676800BC8820 /* ViewController.swift in Sources */,
 				9F5930D721BD676800BC8820 /* AppDelegate.swift in Sources */,
 			);
