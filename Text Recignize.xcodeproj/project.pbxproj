@@ -17,6 +17,7 @@
 		9F5930E121BD676D00BC8820 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F5930DF21BD676D00BC8820 /* LaunchScreen.storyboard */; };
 		9F5930EC21BD676D00BC8820 /* Text_RecignizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5930EB21BD676D00BC8820 /* Text_RecignizeTests.swift */; };
 		9F5930F721BD676D00BC8820 /* Text_RecignizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5930F621BD676D00BC8820 /* Text_RecignizeUITests.swift */; };
+		9FB9968B21EF155C0037F0E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FB9968A21EF155C0037F0E1 /* GoogleService-Info.plist */; };
 		9FCDA0C821E4F80F0091DC6B /* TextParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCDA0C721E4F80F0091DC6B /* TextParse.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,8 +57,8 @@
 		9F5930F221BD676D00BC8820 /* Text RecignizeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Text RecignizeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5930F621BD676D00BC8820 /* Text_RecignizeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text_RecignizeUITests.swift; sourceTree = "<group>"; };
 		9F5930F821BD676D00BC8820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FB9968A21EF155C0037F0E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9FCDA0C721E4F80F0091DC6B /* TextParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextParse.swift; sourceTree = "<group>"; };
-		9FCDA0CB21E8833C0091DC6B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB092AD8561677F3A7D78A0E /* Pods-Text RecignizeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Text RecignizeTests.debug.xcconfig"; path = "Target Support Files/Pods-Text RecignizeTests/Pods-Text RecignizeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DFA9AAE2C15925015268314C /* Pods_Text_RecignizeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Text_RecignizeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79B9CE5848C1F1A12CA0747 /* Pods_Text_Recignize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Text_Recignize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,7 +136,7 @@
 				9FCDA0C921E5E8E00091DC6B /* Service */,
 				9F5930DA21BD676800BC8820 /* Main.storyboard */,
 				9F5930E221BD676D00BC8820 /* Info.plist */,
-				9FCDA0CB21E8833C0091DC6B /* GoogleService-Info.plist */,
+				9FB9968A21EF155C0037F0E1 /* GoogleService-Info.plist */,
 				9F5930DD21BD676D00BC8820 /* Assets.xcassets */,
 				9F5930DF21BD676D00BC8820 /* LaunchScreen.storyboard */,
 			);
@@ -289,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F5930E121BD676D00BC8820 /* LaunchScreen.storyboard in Resources */,
+				9FB9968B21EF155C0037F0E1 /* GoogleService-Info.plist in Resources */,
 				9F5930DE21BD676D00BC8820 /* Assets.xcassets in Resources */,
 				9F5930DC21BD676800BC8820 /* Main.storyboard in Resources */,
 			);
