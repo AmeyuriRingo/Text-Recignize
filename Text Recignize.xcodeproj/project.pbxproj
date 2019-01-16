@@ -132,9 +132,10 @@
 			children = (
 				9F5930D621BD676800BC8820 /* AppDelegate.swift */,
 				9F5930D821BD676800BC8820 /* ViewController.swift */,
-				9FCDA0CA21E883310091DC6B /* Plists */,
 				9FCDA0C921E5E8E00091DC6B /* Service */,
 				9F5930DA21BD676800BC8820 /* Main.storyboard */,
+				9F5930E221BD676D00BC8820 /* Info.plist */,
+				9FCDA0CB21E8833C0091DC6B /* GoogleService-Info.plist */,
 				9F5930DD21BD676D00BC8820 /* Assets.xcassets */,
 				9F5930DF21BD676D00BC8820 /* LaunchScreen.storyboard */,
 			);
@@ -165,15 +166,6 @@
 				9FCDA0C721E4F80F0091DC6B /* TextParse.swift */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		9FCDA0CA21E883310091DC6B /* Plists */ = {
-			isa = PBXGroup;
-			children = (
-				9F5930E221BD676D00BC8820 /* Info.plist */,
-				9FCDA0CB21E8833C0091DC6B /* GoogleService-Info.plist */,
-			);
-			path = Plists;
 			sourceTree = "<group>";
 		};
 		C507116296DDC7F2D3B88372 /* Frameworks */ = {

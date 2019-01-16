@@ -27,8 +27,6 @@ class TextRecognizer {
                 return
             }
             completion(result.text)
-            //debugPrint(resultText)
-            //
         }
     }
 }

@@ -11,11 +11,13 @@ import AVFoundation
 import Firebase
 import FirebaseMLVision
 
-class ViewController: UIViewController, UINavigationControllerDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet weak var recognizedText: UITextView!
     @IBOutlet weak var imageView: UIImageView!
+    var imagePicker = UIImagePickerController()
     private var newImage: UIImage!
+    private var imagePickingCompletion: ((UIImage?) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,25 +40,37 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     @IBAction func importImage(_ sender: AnyObject) {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.sourceType = .photoLibrary
-        present(imagePickerController, animated: true, completion: nil)
-        imagePickerController.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        openLibrary(vc: ViewController(), completionHandler: imagePickingCompletion!)
+//        let imagePickerController = UIImagePickerController()
+//        imagePickerController.sourceType = .photoLibrary
+//        present(imagePickerController, animated: true, completion: nil)
+//        imagePickerController.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
         
+    }
+    func openLibrary(vc: UIViewController, completionHandler: @escaping (UIImage?) -> Void) {
+        imagePickingCompletion = completionHandler
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
+        vc.present(imagePicker, animated: true, completion: nil)
     }
 }
 
-extension ViewController: UIImagePickerControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
-            
-        }
-        newImage = selectedImage
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        guard let chosenImage = info[.originalImage] as? UIImage else { return }
+        imagePicker.dismiss(animated: true, completion: nil)
+        imagePickingCompletion?(chosenImage)
+        imagePickingCompletion = nil
+        newImage = chosenImage
         TextRecognizer.textRecognize(image: newImage) { [weak self] text in
             self?.recognizedText.text = text
         }
         self.imageView.image = newImage
         dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        imagePicker.dismiss(animated: true, completion: nil)
     }
 }
