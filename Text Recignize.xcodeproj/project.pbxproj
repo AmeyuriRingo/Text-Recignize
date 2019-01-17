@@ -131,9 +131,9 @@
 		9F5930D521BD676800BC8820 /* Text Recignize */ = {
 			isa = PBXGroup;
 			children = (
+				9FCDA0C921E5E8E00091DC6B /* Service */,
 				9F5930D621BD676800BC8820 /* AppDelegate.swift */,
 				9F5930D821BD676800BC8820 /* ViewController.swift */,
-				9FCDA0C921E5E8E00091DC6B /* Service */,
 				9F5930DA21BD676800BC8820 /* Main.storyboard */,
 				9F5930E221BD676D00BC8820 /* Info.plist */,
 				9FB9968A21EF155C0037F0E1 /* GoogleService-Info.plist */,

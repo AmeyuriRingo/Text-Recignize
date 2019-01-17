@@ -41,7 +41,17 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func importImage(_ sender: AnyObject) {
+    @IBAction func importFromCamera(_ sender: UIBarButtonItem) {
+        openCamera { [weak self] image in
+            guard let `self` = self, let newImage = image else { return }
+            TextRecognizer.textRecognize(image: newImage) { [weak self] text in
+                self?.recognizedText.text = text
+            }
+            self.imageView.image = image
+        }
+    }
+    
+    @IBAction func importFromLibrary(_ sender: UIBarButtonItem) {
         openLibrary { [weak self] image in
             guard let `self` = self, let newImage = image else { return }
             TextRecognizer.textRecognize(image: newImage) { [weak self] text in
@@ -50,11 +60,26 @@ class ViewController: UIViewController {
             self.imageView.image = image
         }
     }
+    
+    @IBAction func saveData(_ sender: UIBarButtonItem) {
+    }
+    
     func openLibrary(completionHandler: @escaping (UIImage?) -> Void) {
         imagePickingCompletion = completionHandler
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func openCamera(completionHandler: @escaping (UIImage?) -> Void) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+        imagePickingCompletion = completionHandler
+        imagePicker.sourceType = .camera
+        imagePicker.allowsEditing = false
+        present(imagePicker, animated: true, completion: nil)
+        } else {
+            recognizedText.text = "Camera is not available"
+        }
     }
 }
 
