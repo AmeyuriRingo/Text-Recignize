@@ -10,6 +10,8 @@ import UIKit
 import AVFoundation
 import Firebase
 import FirebaseMLVision
+import GoogleSignIn
+import CoreData
 
 class ViewController: UIViewController {
     
@@ -25,7 +27,12 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         imagePicker.delegate = self
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().signIn()
+
     }
+    
     
     @objc private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
@@ -40,6 +47,12 @@ class ViewController: UIViewController {
             self.view.frame.origin.y = 0
         }
     }
+
+    @IBAction func signIn(_ sender: UIButton) {
+    }
+    
+    @IBAction func goToAuth(_ sender: UIButton) {
+    }
     
     @IBAction func importFromCamera(_ sender: UIBarButtonItem) {
         openCamera { [weak self] image in
@@ -48,6 +61,7 @@ class ViewController: UIViewController {
                 self?.recognizedText.text = text
             }
             self.imageView.image = image
+            UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
         }
     }
     
@@ -81,10 +95,21 @@ class ViewController: UIViewController {
             recognizedText.text = "Camera is not available"
         }
     }
+    func localStorageSave(data: DataStructure, image: UIImage){
+        var managedObject : [SavedData] = []
+        let emptyElement = SavedData()
+        
+        emptyElement.savedImage = image.pngData() as NSData?
+        //        UIImage.init(data: emptyElement.image_ref! as Data)
+        emptyElement.account = data.account
+        emptyElement.savedText = data.savedText
+        managedObject.append(emptyElement)
+        CoreDataManager.instance.saveContext()
+
+    }
 }
 
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate, GIDSignInUIDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         
         guard let chosenImage = info[.originalImage] as? UIImage else { return }
@@ -97,3 +122,5 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         imagePicker.dismiss(animated: true, completion: nil)
     }
 }
+
+

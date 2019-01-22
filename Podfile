@@ -12,6 +12,8 @@ target 'Text Recignize' do
   target 'Text RecignizeUITests' do
     inherit! :search_paths
   end
+   pod 'Firebase/Auth'
+   pod 'GoogleSignIn'
    pod 'SwiftLint'
    pod 'KeyboardHideManager', '~> 1.0'
    pod 'Firebase/Core'

@@ -52,7 +52,7 @@
                                                             <action selector="importFromLibrary:" destination="BYZ-38-t0r" id="zGl-i2-7sc"/>
                                                         </connections>
                                                     </barButtonItem>
-                                                    <barButtonItem title="Save" width="197" id="liM-pG-rWO">
+                                                    <barButtonItem title="SavedText" width="197" id="liM-pG-rWO">
                                                         <connections>
                                                             <action selector="saveData:" destination="BYZ-38-t0r" id="1qB-eN-ZdO"/>
                                                         </connections>
