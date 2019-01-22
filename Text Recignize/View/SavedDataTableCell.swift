@@ -10,7 +10,6 @@ import UIKit
 
 class PrototypeCell : UITableViewCell {
 
-    @IBOutlet weak var key: UILabel!
     @IBOutlet weak var value: UITextView!
     @IBOutlet weak var images: UIImageView!
     

@@ -48,11 +48,6 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func signIn(_ sender: UIButton) {
-    }
-    
-    @IBAction func goToAuth(_ sender: UIButton) {
-    }
     
     @IBAction func importFromCamera(_ sender: UIBarButtonItem) {
         openCamera { [weak self] image in
@@ -76,6 +71,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func saveData(_ sender: UIBarButtonItem) {
+        if let nextViewController = TableViewController.storyboardInstance() {
+            navigationController?.pushViewController(nextViewController, animated: true)
+        }
+    
+    }
+    
+    static func storyboardInstance() -> ViewController? {
+        let storyboard = UIStoryboard(name: "ViewController", bundle: nil)
+        return storyboard.instantiateInitialViewController() as? ViewController
     }
     
     func openLibrary(completionHandler: @escaping (UIImage?) -> Void) {
@@ -95,21 +99,10 @@ class ViewController: UIViewController {
             recognizedText.text = "Camera is not available"
         }
     }
-    func localStorageSave(data: DataStructure, image: UIImage){
-        var managedObject : [SavedData] = []
-        let emptyElement = SavedData()
-        
-        emptyElement.savedImage = image.pngData() as NSData?
-        //        UIImage.init(data: emptyElement.image_ref! as Data)
-        emptyElement.account = data.account
-        emptyElement.savedText = data.savedText
-        managedObject.append(emptyElement)
-        CoreDataManager.instance.saveContext()
-
-    }
 }
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate, GIDSignInUIDelegate {
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         
         guard let chosenImage = info[.originalImage] as? UIImage else { return }

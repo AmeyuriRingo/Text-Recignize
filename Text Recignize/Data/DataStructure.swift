@@ -9,7 +9,6 @@
 import UIKit
 
 struct DataStructure {
-    var account: String
     var savedText: String
-    var savedImage: String
+    var savedImage: UIImage
 }

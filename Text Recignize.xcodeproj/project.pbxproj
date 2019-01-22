@@ -20,7 +20,6 @@
 		9F2D788621F3E6C600E34B4D /* SavedData+CoraDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2D788521F3E6C600E34B4D /* SavedData+CoraDataProperties.swift */; };
 		9F2D788821F463B800E34B4D /* CoraData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F2D788721F463B800E34B4D /* CoraData.storyboard */; };
 		9F2D788B21F465A800E34B4D /* SavedDataTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2D788A21F465A800E34B4D /* SavedDataTableCell.swift */; };
-		9F2D788D21F4DB3300E34B4D /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2D788C21F4DB3300E34B4D /* CoreDataViewController.swift */; };
 		9F5930D721BD676800BC8820 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5930D621BD676800BC8820 /* AppDelegate.swift */; };
 		9F5930D921BD676800BC8820 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5930D821BD676800BC8820 /* ViewController.swift */; };
 		9F5930DC21BD676800BC8820 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F5930DA21BD676800BC8820 /* Main.storyboard */; };
@@ -29,6 +28,8 @@
 		9F5930EC21BD676D00BC8820 /* Text_RecignizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5930EB21BD676D00BC8820 /* Text_RecignizeTests.swift */; };
 		9F5930F721BD676D00BC8820 /* Text_RecignizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5930F621BD676D00BC8820 /* Text_RecignizeUITests.swift */; };
 		9FCDA0C821E4F80F0091DC6B /* TextParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCDA0C721E4F80F0091DC6B /* TextParse.swift */; };
+		9FE2290621F7846C0066AC45 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE2290521F7846C0066AC45 /* CoreData.swift */; };
+		9FE2290A21F78B050066AC45 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE2290921F78B050066AC45 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +65,6 @@
 		9F2D788521F3E6C600E34B4D /* SavedData+CoraDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedData+CoraDataProperties.swift"; sourceTree = "<group>"; };
 		9F2D788721F463B800E34B4D /* CoraData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoraData.storyboard; sourceTree = "<group>"; };
 		9F2D788A21F465A800E34B4D /* SavedDataTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDataTableCell.swift; sourceTree = "<group>"; };
-		9F2D788C21F4DB3300E34B4D /* CoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
 		9F5930D321BD676800BC8820 /* Text Recignize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Text Recignize.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5930D621BD676800BC8820 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F5930D821BD676800BC8820 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +78,8 @@
 		9F5930F621BD676D00BC8820 /* Text_RecignizeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text_RecignizeUITests.swift; sourceTree = "<group>"; };
 		9F5930F821BD676D00BC8820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FCDA0C721E4F80F0091DC6B /* TextParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextParse.swift; sourceTree = "<group>"; };
+		9FE2290521F7846C0066AC45 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		9FE2290921F78B050066AC45 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		DB092AD8561677F3A7D78A0E /* Pods-Text RecignizeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Text RecignizeTests.debug.xcconfig"; path = "Target Support Files/Pods-Text RecignizeTests/Pods-Text RecignizeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DFA9AAE2C15925015268314C /* Pods_Text_RecignizeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Text_RecignizeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79B9CE5848C1F1A12CA0747 /* Pods_Text_Recignize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Text_Recignize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,7 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				9F5930D821BD676800BC8820 /* ViewController.swift */,
-				9F2D788C21F4DB3300E34B4D /* CoreDataViewController.swift */,
+				9FE2290921F78B050066AC45 /* TableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -233,6 +235,7 @@
 			children = (
 				9FCDA0C721E4F80F0091DC6B /* TextParse.swift */,
 				9F2D787C21F3D8C800E34B4D /* SignIn.swift */,
+				9FE2290521F7846C0066AC45 /* CoreData.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -535,9 +538,10 @@
 				9F276EAF21F1CEF90018B2A7 /* SavedData.xcdatamodeld in Sources */,
 				9F2D788621F3E6C600E34B4D /* SavedData+CoraDataProperties.swift in Sources */,
 				9F2D788021F3E5FF00E34B4D /* DataManager.swift in Sources */,
+				9FE2290621F7846C0066AC45 /* CoreData.swift in Sources */,
 				9F2D788221F3E65500E34B4D /* DataStructure.swift in Sources */,
-				9F2D788D21F4DB3300E34B4D /* CoreDataViewController.swift in Sources */,
 				9FCDA0C821E4F80F0091DC6B /* TextParse.swift in Sources */,
+				9FE2290A21F78B050066AC45 /* TableViewController.swift in Sources */,
 				9F5930D921BD676800BC8820 /* ViewController.swift in Sources */,
 				9F2D788421F3E6B100E34B4D /* SavedData+CoraDataClass.swift in Sources */,
 				9F2D787D21F3D8C800E34B4D /* SignIn.swift in Sources */,
@@ -719,7 +723,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AL9TWT5H56;
-				INFOPLIST_FILE = "$(SRCROOT)/Text Recignize/Info/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Text Recignize/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -738,7 +742,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AL9TWT5H56;
-				INFOPLIST_FILE = "$(SRCROOT)/Text Recignize/Info/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Text Recignize/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

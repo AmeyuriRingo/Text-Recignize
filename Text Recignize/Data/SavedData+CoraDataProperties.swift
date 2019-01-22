@@ -17,7 +17,6 @@ extension SavedData {
     }
     
     @NSManaged public var savedImage: NSData?
-    @NSManaged public var account: String?
     @NSManaged public var savedText: String?
     
 }
