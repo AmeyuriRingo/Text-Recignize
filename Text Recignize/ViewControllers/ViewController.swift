@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     
     private var imagePicker = UIImagePickerController()
     private var imagePickingCompletion: ((UIImage?) -> Void)?
+    private var alert = Alert()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +55,9 @@ class ViewController: UIViewController {
             guard let `self` = self, let newImage = image else { return }
             TextRecognizer.textRecognize(image: newImage) { [weak self] text in
                 self?.recognizedText.text = text
+                if (self?.recognizedText.text.isEmpty)! {
+                    self?.present((self?.alert.alert(errorText: "Text can't be recognized or not found"))!, animated: true, completion: nil)
+                }
             }
             self.imageView.image = image
             UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
@@ -65,9 +69,16 @@ class ViewController: UIViewController {
             guard let `self` = self, let newImage = image else { return }
             TextRecognizer.textRecognize(image: newImage) { [weak self] text in
                 self?.recognizedText.text = text
+                if (self?.recognizedText.text.isEmpty)! {
+                    self?.present((self?.alert.alert(errorText: "Text can't be recognized or not found"))!, animated: true, completion: nil)
+                }
             }
             self.imageView.image = image
         }
+//        if self.recognizedText.text.isEmpty {
+//            //present(alert.alert(errorText: "Text can't be recognized or not found"), animated: true, completion: nil)
+//            self.recognizedText.text = "Text can't be recognized or not found"
+//        }
     }
     
     @IBAction func saveData(_ sender: UIBarButtonItem) {
@@ -96,7 +107,7 @@ class ViewController: UIViewController {
         imagePicker.allowsEditing = false
         present(imagePicker, animated: true, completion: nil)
         } else {
-            recognizedText.text = "Camera is not available"
+            present(alert.alert(errorText: "Camera isn't available"), animated: true, completion: nil)
         }
     }
 }
