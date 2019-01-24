@@ -9,7 +9,8 @@
 import Foundation
 import CoreData
 
-class CoreDataManager{
+class CoreDataManager {
+    
     static let instance = CoreDataManager()
     
     private init() {}

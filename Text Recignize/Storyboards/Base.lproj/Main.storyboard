@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="A7g-bw-aX0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,16 +19,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oV9-nk-H5m">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="571"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5b-R2-p6J">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FPY-XF-BTp">
-                                                <rect key="frame" x="8" y="8" width="359" height="408"/>
+                                                <rect key="frame" x="8" y="-24" width="359" height="364"/>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Recognized text will appear here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2a5-Wj-OcE">
-                                                <rect key="frame" x="8" y="424" width="359" height="160"/>
+                                                <rect key="frame" x="8" y="348" width="359" height="160"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="160" id="pA2-Xi-yb8"/>
@@ -37,7 +37,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aud-XS-Gzm">
-                                                <rect key="frame" x="0.0" y="603" width="375" height="44"/>
+                                                <rect key="frame" x="0.0" y="527" width="375" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="7yh-cm-lPR"/>
                                                 </constraints>
@@ -70,9 +70,9 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="o5b-R2-p6J" firstAttribute="centerY" secondItem="oV9-nk-H5m" secondAttribute="centerY" id="4Ur-4I-KTh"/>
+                                    <constraint firstItem="o5b-R2-p6J" firstAttribute="centerY" secondItem="oV9-nk-H5m" secondAttribute="centerY" constant="16" id="4Ur-4I-KTh"/>
                                     <constraint firstItem="o5b-R2-p6J" firstAttribute="top" secondItem="oV9-nk-H5m" secondAttribute="top" id="Hoa-8H-dan"/>
-                                    <constraint firstAttribute="bottom" secondItem="o5b-R2-p6J" secondAttribute="bottom" id="Pxh-f9-owq"/>
+                                    <constraint firstAttribute="bottom" secondItem="o5b-R2-p6J" secondAttribute="bottom" constant="-32" id="Pxh-f9-owq"/>
                                     <constraint firstAttribute="trailing" secondItem="o5b-R2-p6J" secondAttribute="trailing" id="gnL-B9-y7u"/>
                                     <constraint firstItem="o5b-R2-p6J" firstAttribute="leading" secondItem="oV9-nk-H5m" secondAttribute="leading" id="uZ8-bz-zf0"/>
                                     <constraint firstItem="o5b-R2-p6J" firstAttribute="centerX" secondItem="oV9-nk-H5m" secondAttribute="centerX" id="vu9-FK-f0N"/>
@@ -82,7 +82,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FPY-XF-BTp" secondAttribute="trailing" constant="8" id="295-h2-P7u"/>
-                            <constraint firstItem="oV9-nk-H5m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BYF-On-eM0"/>
+                            <constraint firstItem="oV9-nk-H5m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="BYF-On-eM0"/>
                             <constraint firstItem="oV9-nk-H5m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bp0-td-i37"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aud-XS-Gzm" secondAttribute="bottom" id="DQ6-Lm-Hwh"/>
                             <constraint firstItem="oV9-nk-H5m" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="E11-Cg-6ES"/>
@@ -94,6 +94,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="JC6-R6-ReE"/>
                     <connections>
                         <outlet property="imageView" destination="FPY-XF-BTp" id="ZdT-3q-xxk"/>
                         <outlet property="recognizedText" destination="2a5-Wj-OcE" id="ryE-OO-SKA"/>
@@ -107,6 +108,24 @@
                         <outletCollection property="targets" destination="o5b-R2-p6J" collectionClass="NSMutableArray" id="wby-pQ-sUs"/>
                     </connections>
                 </customObject>
+            </objects>
+            <point key="canvasLocation" x="1072.8" y="131.78410794602701"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cXO-D9-KOB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="A7g-bw-aX0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gc9-lx-FPf">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fLJ-Em-PBK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d8p-Q3-1as" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="133.59999999999999" y="131.78410794602701"/>
         </scene>

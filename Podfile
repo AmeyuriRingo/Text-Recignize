@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '11.0'
+platform :ios, '10.0'
 use_frameworks!
 
 target 'Text Recignize' do
@@ -12,9 +12,12 @@ target 'Text Recignize' do
   target 'Text RecignizeUITests' do
     inherit! :search_paths
   end
+   pod 'FirebaseUI'
    pod 'Firebase/Auth'
    pod 'GoogleSignIn'
-   pod 'SwiftLint'
+   pod 'FirebaseUI/Facebook'
+   pod 'FirebaseUI/Twitter'
+   pod 'FirebaseUI/Phone'
    pod 'KeyboardHideManager', '~> 1.0'
    pod 'Firebase/Core'
    pod 'Firebase/MLVision'

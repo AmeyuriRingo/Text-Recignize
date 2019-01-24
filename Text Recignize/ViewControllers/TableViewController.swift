@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
  
     private var tableData : [DataStructure] = []
@@ -21,7 +19,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     static func storyboardInstance() -> TableViewController? {
-        let storyboard = UIStoryboard(name: "TableViewController", bundle: nil)
+        let storyboard = UIStoryboard(name: "CoreData", bundle: nil)
         return storyboard.instantiateInitialViewController() as? TableViewController
     }
     

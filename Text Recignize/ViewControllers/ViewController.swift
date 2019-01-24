@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     private var imagePicker = UIImagePickerController()
     private var imagePickingCompletion: ((UIImage?) -> Void)?
-    private var alert = Alert()
+    private var alert = Alert() //init in methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +48,6 @@ class ViewController: UIViewController {
             self.view.frame.origin.y = 0
         }
     }
-
     
     @IBAction func importFromCamera(_ sender: UIBarButtonItem) {
         openCamera { [weak self] image in
@@ -59,8 +58,8 @@ class ViewController: UIViewController {
                     self?.present((self?.alert.alert(errorText: "Text can't be recognized or not found"))!, animated: true, completion: nil)
                 }
             }
-            self.imageView.image = image
-            UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+            self.imageView.image = newImage
+            UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil)
         }
     }
     
@@ -75,10 +74,6 @@ class ViewController: UIViewController {
             }
             self.imageView.image = image
         }
-//        if self.recognizedText.text.isEmpty {
-//            //present(alert.alert(errorText: "Text can't be recognized or not found"), animated: true, completion: nil)
-//            self.recognizedText.text = "Text can't be recognized or not found"
-//        }
     }
     
     @IBAction func saveData(_ sender: UIBarButtonItem) {
@@ -88,24 +83,19 @@ class ViewController: UIViewController {
     
     }
     
-    static func storyboardInstance() -> ViewController? {
-        let storyboard = UIStoryboard(name: "ViewController", bundle: nil)
-        return storyboard.instantiateInitialViewController() as? ViewController
-    }
-    
-    func openLibrary(completionHandler: @escaping (UIImage?) -> Void) {
+    private func openLibrary(completionHandler: @escaping (UIImage?) -> Void) {
         imagePickingCompletion = completionHandler
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
         present(imagePicker, animated: true, completion: nil)
     }
     
-    func openCamera(completionHandler: @escaping (UIImage?) -> Void) {
+    private func openCamera(completionHandler: @escaping (UIImage?) -> Void) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
-        imagePickingCompletion = completionHandler
-        imagePicker.sourceType = .camera
-        imagePicker.allowsEditing = false
-        present(imagePicker, animated: true, completion: nil)
+            imagePickingCompletion = completionHandler
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = false
+            present(imagePicker, animated: true, completion: nil)
         } else {
             present(alert.alert(errorText: "Camera isn't available"), animated: true, completion: nil)
         }

@@ -12,8 +12,7 @@ class PrototypeCell : UITableViewCell {
 
     @IBOutlet weak var value: UITextView!
     @IBOutlet weak var images: UIImageView!
-    
-    
+    //prepareForReuse
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

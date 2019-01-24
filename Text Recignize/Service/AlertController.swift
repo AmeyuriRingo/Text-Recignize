@@ -9,6 +9,7 @@
 import UIKit
 
 class Alert  {
+    
     func alert(errorText: String) -> UIAlertController {
         let alert = UIAlertController(title: "Error", message: "", preferredStyle: .alert)
         let alertButton = UIAlertAction(title: "ОК", style: .default, handler: nil)
