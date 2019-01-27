@@ -19,7 +19,6 @@ class TextRecognizer {
         let textRecognizer = vision.cloudTextRecognizer(options: options)
         
         let image = VisionImage(image: image)
-        //self.imageView.image = firstImage
         
         textRecognizer.process(image) { result, error in
             guard error == nil, let result = result else {

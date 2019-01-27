@@ -9,6 +9,7 @@
 import UIKit
 
 struct DataStructure {
-    var savedText: String
-    var savedImage: UIImage
+    var recignizedText: String
+    var recognizedImage: UIImage
+    var account: String
 }

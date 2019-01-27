@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TextRecognizeViewController.swift
 //  Text Recignize
 //
 //  Created by Ringo_02 on 12/9/18.
@@ -10,32 +10,33 @@ import UIKit
 import AVFoundation
 import Firebase
 import FirebaseMLVision
-import GoogleSignIn
 import CoreData
 
-class ViewController: UIViewController {
+class TextRecognizeViewController: UIViewController {
     
     @IBOutlet weak var recognizedText: UITextView!
     @IBOutlet weak var imageView: UIImageView!
     
     private var imagePicker = UIImagePickerController()
     private var imagePickingCompletion: ((UIImage?) -> Void)?
-    private var alert = Alert() //init in methods
+    
+    var saveData = SaveData()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        keybordManager()
         
         imagePicker.delegate = self
-        
-        GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().signIn()
-
     }
     
-    
+    func keybordManager() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
     @objc private func keyboardWillShow(notification: NSNotification) {
+        
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
                 self.view.frame.origin.y -= keyboardSize.height
@@ -44,46 +45,64 @@ class ViewController: UIViewController {
     }
     
     @objc private func keyboardWillHide(notification: NSNotification) {
+        
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
     }
     
     @IBAction func importFromCamera(_ sender: UIBarButtonItem) {
+        
+        let alert = Alert()
         openCamera { [weak self] image in
             guard let `self` = self, let newImage = image else { return }
             TextRecognizer.textRecognize(image: newImage) { [weak self] text in
                 self?.recognizedText.text = text
+                //self!.saveData.localStorageSave(text: text ?? "", image: newImage)
                 if (self?.recognizedText.text.isEmpty)! {
-                    self?.present((self?.alert.alert(errorText: "Text can't be recognized or not found"))!, animated: true, completion: nil)
+                    self?.present((alert.alert(errorText: "Text can't be recognized or not found")), animated: true, completion: nil)
                 }
             }
             self.imageView.image = newImage
             UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil)
         }
+        self.saveData.localStorageSave(text: recognizedText.text ?? "", image: imageView.image ?? UIImage())
     }
     
     @IBAction func importFromLibrary(_ sender: UIBarButtonItem) {
+        
+        let alert = Alert()
         openLibrary { [weak self] image in
             guard let `self` = self, let newImage = image else { return }
             TextRecognizer.textRecognize(image: newImage) { [weak self] text in
                 self?.recognizedText.text = text
+                //self!.saveData.localStorageSave(text: text ?? "", image: newImage)
                 if (self?.recognizedText.text.isEmpty)! {
-                    self?.present((self?.alert.alert(errorText: "Text can't be recognized or not found"))!, animated: true, completion: nil)
+                    self?.present((alert.alert(errorText: "Text can't be recognized or not found")), animated: true, completion: nil)
+                } else {
+                    self!.saveData.localStorageSave(text: text ?? "", image: newImage)
                 }
             }
             self.imageView.image = image
+            //self.saveData.localStorageSave(text: self.recognizedText.text ?? "", image: self.imageView.image ?? UIImage())
         }
+        
     }
     
     @IBAction func saveData(_ sender: UIBarButtonItem) {
-        if let nextViewController = TableViewController.storyboardInstance() {
-            navigationController?.pushViewController(nextViewController, animated: true)
-        }
-    
+        
+//        if let nextViewController = SavedDataViewController.storyboardInstance() {
+//            navigationController?.pushViewController(nextViewController, animated: true)
+//        }
     }
     
+//    static func storyboardInstance() -> TextRecognizeViewController? {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        return storyboard.instantiateInitialViewController() as? TextRecognizeViewController
+//    }
+    
     private func openLibrary(completionHandler: @escaping (UIImage?) -> Void) {
+        
         imagePickingCompletion = completionHandler
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
@@ -91,6 +110,8 @@ class ViewController: UIViewController {
     }
     
     private func openCamera(completionHandler: @escaping (UIImage?) -> Void) {
+        
+        let alert = Alert()
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
             imagePickingCompletion = completionHandler
             imagePicker.sourceType = .camera
@@ -102,7 +123,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate, GIDSignInUIDelegate {
+extension TextRecognizeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         

@@ -12,12 +12,7 @@ target 'Text Recignize' do
   target 'Text RecignizeUITests' do
     inherit! :search_paths
   end
-   pod 'FirebaseUI'
    pod 'Firebase/Auth'
-   pod 'GoogleSignIn'
-   pod 'FirebaseUI/Facebook'
-   pod 'FirebaseUI/Twitter'
-   pod 'FirebaseUI/Phone'
    pod 'KeyboardHideManager', '~> 1.0'
    pod 'Firebase/Core'
    pod 'Firebase/MLVision'

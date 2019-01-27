@@ -1,5 +1,5 @@
 //
-//  SvedDataTableCell.swift
+//  SavedDataTableCell.swift
 //  Text Recignize
 //
 //  Created by Ringo_02 on 1/20/19.
@@ -12,6 +12,8 @@ class PrototypeCell : UITableViewCell {
 
     @IBOutlet weak var value: UITextView!
     @IBOutlet weak var images: UIImageView!
+    @IBOutlet weak var account: UILabel!
+    
     //prepareForReuse
     override func awakeFromNib() {
         super.awakeFromNib()
