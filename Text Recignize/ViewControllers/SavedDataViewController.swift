@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class SavedDataViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
  
@@ -15,6 +16,7 @@ class SavedDataViewController: UIViewController, UITableViewDataSource, UITableV
     
     private var saveData = SaveData()
     private var tableData : [DataStructure] = []
+    private var fetchResultController: NSFetchedResultsController<RecognizedData>!
 
     override func viewDidLoad() {
         
@@ -51,13 +53,23 @@ class SavedDataViewController: UIViewController, UITableViewDataSource, UITableV
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        let deleteAction = UITableViewRowAction(style: UITableViewRowAction.Style.default, title: "Delete",handler: { (action, indexPath) -> Void in
+                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                    let context = appDelegate.persistentContainer.viewContext
+                    //let context = tableView.dequeueReusableCell(withIdentifier: "PrototypeTableViewCell", for: indexPath) as! PrototypeCell
+                    let recignizedDataToDelete = self.fetchResultController.object(at: indexPath)
+                    context.delete(recignizedDataToDelete)
+                    appDelegate.saveContext()
+                }
+        })
+    }
     
     @IBAction func backToRecognize(_ sender: UIBarButtonItem) {
-        
-//        if let nextViewController = TextRecognizeViewController.storyboardInstance() {
-//            navigationController?.pushViewController(nextViewController, animated: true)
-//        }
     }
+    
+    
     
     /*
     // MARK: - Navigation

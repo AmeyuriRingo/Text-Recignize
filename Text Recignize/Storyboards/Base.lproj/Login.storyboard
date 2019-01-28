@@ -52,8 +52,7 @@
                                         </constraints>
                                         <state key="normal" title="Sign in"/>
                                         <connections>
-                                            <action selector="login:" destination="Bvi-XF-JuL" eventType="touchUpInside" id="64e-Av-N2B"/>
-                                            <segue destination="ck4-B1-2WW" kind="presentation" id="Zo5-i6-Kcg"/>
+                                            <action selector="login:" destination="Bvi-XF-JuL" eventType="touchUpInside" id="ZcP-mM-V2G"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3J9-J8-TDf">
@@ -61,7 +60,6 @@
                                         <state key="normal" title="Sign up!"/>
                                         <connections>
                                             <action selector="goToSignUp:" destination="Bvi-XF-JuL" eventType="touchUpInside" id="G4w-gU-8cK"/>
-                                            <segue destination="GU9-CI-5Jg" kind="show" id="MR8-vc-spd"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -99,6 +97,7 @@
                     <connections>
                         <outlet property="email" destination="9NS-Zt-ebC" id="hGR-7c-SNX"/>
                         <outlet property="password" destination="C6J-6T-33g" id="Izo-GC-cGh"/>
+                        <segue destination="ck4-B1-2WW" kind="show" identifier="loginToRecognize" id="sEJ-hg-uzA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VFh-Ua-5cI" sceneMemberID="firstResponder"/>
@@ -118,15 +117,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Caf-am-uHi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1585" y="65"/>
-        </scene>
-        <!--SignUp-->
-        <scene sceneID="tss-sU-aCy">
-            <objects>
-                <viewControllerPlaceholder storyboardName="SignUp" id="GU9-CI-5Jg" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gW2-Gf-hoc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1640" y="131"/>
+            <point key="canvasLocation" x="1637" y="131"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="c0C-vk-hHI">

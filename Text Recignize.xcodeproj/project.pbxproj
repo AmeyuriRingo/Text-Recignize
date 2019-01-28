@@ -13,9 +13,9 @@
 		9F276EBB21F35F1A0018B2A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F276EB921F35F1A0018B2A7 /* GoogleService-Info.plist */; };
 		9F276EBC21F35F1A0018B2A7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F276EBA21F35F1A0018B2A7 /* Info.plist */; };
 		9F2D787D21F3D8C800E34B4D /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2D787C21F3D8C800E34B4D /* SignIn.swift */; };
-		9F2D788021F3E5FF00E34B4D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2D787F21F3E5FF00E34B4D /* DataManager.swift */; };
+		9F2D788021F3E5FF00E34B4D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2D787F21F3E5FF00E34B4D /* CoreDataManager.swift */; };
 		9F2D788221F3E65500E34B4D /* DataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2D788121F3E65500E34B4D /* DataStructure.swift */; };
-		9F2D788821F463B800E34B4D /* CoreData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F2D788721F463B800E34B4D /* CoreData.storyboard */; };
+		9F2D788821F463B800E34B4D /* Stored.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F2D788721F463B800E34B4D /* Stored.storyboard */; };
 		9F2D788B21F465A800E34B4D /* PrototypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2D788A21F465A800E34B4D /* PrototypeCell.swift */; };
 		9F5930D721BD676800BC8820 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5930D621BD676800BC8820 /* AppDelegate.swift */; };
 		9F5930D921BD676800BC8820 /* TextRecognizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5930D821BD676800BC8820 /* TextRecognizeViewController.swift */; };
@@ -26,9 +26,7 @@
 		9FCED22C21FA051500E95622 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FCED22B21FA051500E95622 /* Main.storyboard */; };
 		9FD43A6021FDA02F00BDF041 /* SavedData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD43A5F21FDA02F00BDF041 /* SavedData+CoreDataClass.swift */; };
 		9FD43A6221FDA05500BDF041 /* SavedData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD43A6121FDA05500BDF041 /* SavedData+CoreDataProperties.swift */; };
-		9FD43A6421FDED1500BDF041 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD43A6321FDED1500BDF041 /* SignUp.storyboard */; };
 		9FD43A6621FDEE1D00BDF041 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD43A6521FDEE1D00BDF041 /* SignUp.swift */; };
-		9FD43A6821FE030400BDF041 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD43A6721FE030400BDF041 /* SignUpViewController.swift */; };
 		9FD43A6A21FE0D2100BDF041 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD43A6921FE0D2100BDF041 /* LoginViewController.swift */; };
 		9FE2290621F7846C0066AC45 /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE2290521F7846C0066AC45 /* SaveData.swift */; };
 		9FE2290A21F78B050066AC45 /* SavedDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE2290921F78B050066AC45 /* SavedDataViewController.swift */; };
@@ -66,9 +64,9 @@
 		9F276EB921F35F1A0018B2A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9F276EBA21F35F1A0018B2A7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F2D787C21F3D8C800E34B4D /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
-		9F2D787F21F3E5FF00E34B4D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		9F2D787F21F3E5FF00E34B4D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		9F2D788121F3E65500E34B4D /* DataStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructure.swift; sourceTree = "<group>"; };
-		9F2D788721F463B800E34B4D /* CoreData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoreData.storyboard; sourceTree = "<group>"; };
+		9F2D788721F463B800E34B4D /* Stored.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Stored.storyboard; sourceTree = "<group>"; };
 		9F2D788A21F465A800E34B4D /* PrototypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeCell.swift; sourceTree = "<group>"; };
 		9F5930D321BD676800BC8820 /* Text Recignize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Text Recignize.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5930D621BD676800BC8820 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,9 +81,7 @@
 		9FCED22B21FA051500E95622 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9FD43A5F21FDA02F00BDF041 /* SavedData+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SavedData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9FD43A6121FDA05500BDF041 /* SavedData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedData+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		9FD43A6321FDED1500BDF041 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		9FD43A6521FDEE1D00BDF041 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
-		9FD43A6721FE030400BDF041 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9FD43A6921FE0D2100BDF041 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9FE2290521F7846C0066AC45 /* SaveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
 		9FE2290921F78B050066AC45 /* SavedDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDataViewController.swift; sourceTree = "<group>"; };
@@ -149,7 +145,7 @@
 			children = (
 				9F276EAD21F1CEF90018B2A7 /* SavedData.xcdatamodeld */,
 				9F2D788121F3E65500E34B4D /* DataStructure.swift */,
-				9F2D787F21F3E5FF00E34B4D /* DataManager.swift */,
+				9F2D787F21F3E5FF00E34B4D /* CoreDataManager.swift */,
 				9FD43A5F21FDA02F00BDF041 /* SavedData+CoreDataClass.swift */,
 				9FD43A6121FDA05500BDF041 /* SavedData+CoreDataProperties.swift */,
 			);
@@ -160,9 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				9F5930DA21BD676800BC8820 /* Login.storyboard */,
-				9FD43A6321FDED1500BDF041 /* SignUp.storyboard */,
 				9F5930DF21BD676D00BC8820 /* LaunchScreen.storyboard */,
-				9F2D788721F463B800E34B4D /* CoreData.storyboard */,
+				9F2D788721F463B800E34B4D /* Stored.storyboard */,
 				9FCED22B21FA051500E95622 /* Main.storyboard */,
 			);
 			path = Storyboards;
@@ -174,7 +169,6 @@
 				9F5930D821BD676800BC8820 /* TextRecognizeViewController.swift */,
 				9FD43A6921FE0D2100BDF041 /* LoginViewController.swift */,
 				9FE2290921F78B050066AC45 /* SavedDataViewController.swift */,
-				9FD43A6721FE030400BDF041 /* SignUpViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -360,8 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F5930E121BD676D00BC8820 /* LaunchScreen.storyboard in Resources */,
-				9FD43A6421FDED1500BDF041 /* SignUp.storyboard in Resources */,
-				9F2D788821F463B800E34B4D /* CoreData.storyboard in Resources */,
+				9F2D788821F463B800E34B4D /* Stored.storyboard in Resources */,
 				9F276EBB21F35F1A0018B2A7 /* GoogleService-Info.plist in Resources */,
 				9F5930DE21BD676D00BC8820 /* Assets.xcassets in Resources */,
 				9FCED22C21FA051500E95622 /* Main.storyboard in Resources */,
@@ -537,12 +530,11 @@
 				9FD43A6021FDA02F00BDF041 /* SavedData+CoreDataClass.swift in Sources */,
 				9F2D788B21F465A800E34B4D /* PrototypeCell.swift in Sources */,
 				9F276EAF21F1CEF90018B2A7 /* SavedData.xcdatamodeld in Sources */,
-				9F2D788021F3E5FF00E34B4D /* DataManager.swift in Sources */,
+				9F2D788021F3E5FF00E34B4D /* CoreDataManager.swift in Sources */,
 				9FE2290621F7846C0066AC45 /* SaveData.swift in Sources */,
 				9F2D788221F3E65500E34B4D /* DataStructure.swift in Sources */,
 				9FD43A6621FDEE1D00BDF041 /* SignUp.swift in Sources */,
 				9FCDA0C821E4F80F0091DC6B /* TextParse.swift in Sources */,
-				9FD43A6821FE030400BDF041 /* SignUpViewController.swift in Sources */,
 				9FE2290A21F78B050066AC45 /* SavedDataViewController.swift in Sources */,
 				9F5930D921BD676800BC8820 /* TextRecognizeViewController.swift in Sources */,
 				9FD43A6A21FE0D2100BDF041 /* LoginViewController.swift in Sources */,

@@ -21,7 +21,7 @@ class SaveData {
             for result in results as! [RecognizedData] {
                 var emptyElement = DataStructure(recignizedText: "", recognizedImage: UIImage(), account: "")
                 emptyElement.recignizedText = result.recignizedText!
-                emptyElement.account = result.account!
+                emptyElement.account = result.account ?? ""
                 emptyElement.recognizedImage = UIImage(data: result.recognizedImage ?? NSData() as Data) ?? UIImage()
                 fetchedTableData.append(emptyElement)
             }
@@ -36,10 +36,16 @@ class SaveData {
         var managedObject : [RecognizedData] = []
         let emptyElement = RecognizedData()
         
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if Auth.auth().currentUser != nil {
+                let user = Auth.auth().currentUser
+                if let user = user {
+                    emptyElement.account = user.email
+                }
+            }
+        }
         emptyElement.recognizedImage = image.pngData()
         emptyElement.recignizedText = text
-        //emptyElement.account = Auth.auth().currentUser?.email
-        FIR
         managedObject.append(emptyElement)
         CoreDataManager.instance.saveContext()
         

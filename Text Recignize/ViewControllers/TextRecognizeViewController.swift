@@ -96,7 +96,21 @@ class TextRecognizeViewController: UIViewController {
 //        }
     }
     
-//    static func storyboardInstance() -> TextRecognizeViewController? {
+    
+    @IBAction func signOut(_ sender: UIButton) {
+        
+        let user = Auth.auth().currentUser!
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out", signOutError)
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+
+    //    static func storyboardInstance() -> TextRecognizeViewController? {
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        return storyboard.instantiateInitialViewController() as? TextRecognizeViewController
 //    }
