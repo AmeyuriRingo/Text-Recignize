@@ -10,17 +10,28 @@ import UIKit
 
 class Alert  {
     
-    func alert(errorText: String) -> UIAlertController {
-        let alert = UIAlertController(title: "Error", message: errorText, preferredStyle: .alert)
+    func alert(errorText: String?) -> UIAlertController {
+        
+        let alert = UIAlertController(title: "Error", message: errorText ?? "", preferredStyle: .alert)
         let alertButton = UIAlertAction(title: "ОК", style: .default, handler: nil)
         alert.addAction(alertButton)
         return alert
     }
     
-    func isValidEmail(testStr:String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+    func register() {
+        let alert = UIAlertController(title: "Register", message: "Register", preferredStyle: .alert)
+        let saveAction = UIAlertAction(title: "Save", style: .default)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluate(with: testStr)
+        alert.addTextField { textEmail in textEmail.placeholder = "Enter your email"
+        }
+        
+        alert.addTextField { textPassword in textPassword.isSecureTextEntry = true
+            textPassword.placeholder = "Enter your password"
+        }
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
     }
 }
+

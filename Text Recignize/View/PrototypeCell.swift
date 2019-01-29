@@ -14,17 +14,10 @@ class PrototypeCell : UITableViewCell {
     @IBOutlet weak var images: UIImageView!
     @IBOutlet weak var account: UILabel!
     
-    //prepareForReuse
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    override func prepareForReuse() {
         
-        // Configure the view for the selected state
+        images.image = nil
+        value.text = nil
+        account.text = nil
     }
-    
-    
 }

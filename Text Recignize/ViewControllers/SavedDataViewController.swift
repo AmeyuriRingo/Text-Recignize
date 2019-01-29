@@ -11,30 +11,23 @@ import CoreData
 
 class SavedDataViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
  
-    
-    @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var table: UITableView?
     
     private var saveData = SaveData()
     private var tableData : [DataStructure] = []
     private var fetchResultController: NSFetchedResultsController<RecognizedData>!
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+        
         setDataToVC()
         // Do any additional setup after loading the view.
-//        table.rowHeight = UITableView.automaticDimension
     }
-    
-//    static func storyboardInstance() -> SavedDataViewController? {
-//        let storyboard = UIStoryboard(name: "CoreData", bundle: nil)
-//        return storyboard.instantiateInitialViewController() as? SavedDataViewController
-//    }
     
     func setDataToVC() {
         
         tableData = saveData.fetchDataFromDB() 
-        table.reloadData()
+        table?.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,21 +49,14 @@ class SavedDataViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         let deleteAction = UITableViewRowAction(style: UITableViewRowAction.Style.default, title: "Delete",handler: { (action, indexPath) -> Void in
-                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-                    let context = appDelegate.persistentContainer.viewContext
-                    //let context = tableView.dequeueReusableCell(withIdentifier: "PrototypeTableViewCell", for: indexPath) as! PrototypeCell
+            if (UIApplication.shared.delegate as? AppDelegate) != nil {
+                    let context = CoreDataManager.instance.persistentContainer.viewContext
                     let recignizedDataToDelete = self.fetchResultController.object(at: indexPath)
                     context.delete(recignizedDataToDelete)
-                    appDelegate.saveContext()
+                    CoreDataManager.instance.saveContext()
                 }
         })
     }
-    
-    @IBAction func backToRecognize(_ sender: UIBarButtonItem) {
-    }
-    
-    
-    
     /*
     // MARK: - Navigation
 
@@ -80,5 +66,4 @@ class SavedDataViewController: UIViewController, UITableViewDataSource, UITableV
         // Pass the selected object to the new view controller.
     }
     */
-
-}
+ }

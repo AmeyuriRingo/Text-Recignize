@@ -16,6 +16,7 @@ class TextRecognizeViewController: UIViewController {
     
     @IBOutlet weak var recognizedText: UITextView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private var imagePicker = UIImagePickerController()
     private var imagePickingCompletion: ((UIImage?) -> Void)?
@@ -58,7 +59,6 @@ class TextRecognizeViewController: UIViewController {
             guard let `self` = self, let newImage = image else { return }
             TextRecognizer.textRecognize(image: newImage) { [weak self] text in
                 self?.recognizedText.text = text
-                //self!.saveData.localStorageSave(text: text ?? "", image: newImage)
                 if (self?.recognizedText.text.isEmpty)! {
                     self?.present((alert.alert(errorText: "Text can't be recognized or not found")), animated: true, completion: nil)
                 }
@@ -74,9 +74,10 @@ class TextRecognizeViewController: UIViewController {
         let alert = Alert()
         openLibrary { [weak self] image in
             guard let `self` = self, let newImage = image else { return }
+//            self.activityIndicator.startAnimating()
             TextRecognizer.textRecognize(image: newImage) { [weak self] text in
+                self?.activityIndicator.startAnimating()
                 self?.recognizedText.text = text
-                //self!.saveData.localStorageSave(text: text ?? "", image: newImage)
                 if (self?.recognizedText.text.isEmpty)! {
                     self?.present((alert.alert(errorText: "Text can't be recognized or not found")), animated: true, completion: nil)
                 } else {
@@ -84,22 +85,14 @@ class TextRecognizeViewController: UIViewController {
                 }
             }
             self.imageView.image = image
-            //self.saveData.localStorageSave(text: self.recognizedText.text ?? "", image: self.imageView.image ?? UIImage())
+            self.activityIndicator.stopAnimating()
         }
         
     }
     
-    @IBAction func saveData(_ sender: UIBarButtonItem) {
-        
-//        if let nextViewController = SavedDataViewController.storyboardInstance() {
-//            navigationController?.pushViewController(nextViewController, animated: true)
-//        }
-    }
-    
-    
     @IBAction func signOut(_ sender: UIButton) {
         
-        let user = Auth.auth().currentUser!
+       guard Auth.auth().currentUser != nil else { return }
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
@@ -108,12 +101,6 @@ class TextRecognizeViewController: UIViewController {
         }
         self.dismiss(animated: true, completion: nil)
     }
-    
-
-    //    static func storyboardInstance() -> TextRecognizeViewController? {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        return storyboard.instantiateInitialViewController() as? TextRecognizeViewController
-//    }
     
     private func openLibrary(completionHandler: @escaping (UIImage?) -> Void) {
         

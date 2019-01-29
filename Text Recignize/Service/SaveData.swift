@@ -37,6 +37,7 @@ class SaveData {
         let emptyElement = RecognizedData()
         
         Auth.auth().addStateDidChangeListener { (auth, user) in
+            //remove if
             if Auth.auth().currentUser != nil {
                 let user = Auth.auth().currentUser
                 if let user = user {
@@ -44,6 +45,7 @@ class SaveData {
                 }
             }
         }
+
         emptyElement.recognizedImage = image.pngData()
         emptyElement.recignizedText = text
         managedObject.append(emptyElement)

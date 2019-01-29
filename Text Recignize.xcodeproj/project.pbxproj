@@ -9,10 +9,8 @@
 /* Begin PBXBuildFile section */
 		29D6BE5C9A734508231C3F4D /* Pods_Text_Recignize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75723BD8A5428AA4AA9752A0 /* Pods_Text_Recignize.framework */; };
 		9F219C7821F85D3E009C3614 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F219C7721F85D3E009C3614 /* AlertController.swift */; };
-		9F276EAF21F1CEF90018B2A7 /* SavedData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F276EAD21F1CEF90018B2A7 /* SavedData.xcdatamodeld */; };
+		9F276EAF21F1CEF90018B2A7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F276EAD21F1CEF90018B2A7 /* Model.xcdatamodeld */; };
 		9F276EBB21F35F1A0018B2A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F276EB921F35F1A0018B2A7 /* GoogleService-Info.plist */; };
-		9F276EBC21F35F1A0018B2A7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F276EBA21F35F1A0018B2A7 /* Info.plist */; };
-		9F2D787D21F3D8C800E34B4D /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2D787C21F3D8C800E34B4D /* SignIn.swift */; };
 		9F2D788021F3E5FF00E34B4D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2D787F21F3E5FF00E34B4D /* CoreDataManager.swift */; };
 		9F2D788221F3E65500E34B4D /* DataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2D788121F3E65500E34B4D /* DataStructure.swift */; };
 		9F2D788821F463B800E34B4D /* Stored.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F2D788721F463B800E34B4D /* Stored.storyboard */; };
@@ -22,11 +20,10 @@
 		9F5930DC21BD676800BC8820 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F5930DA21BD676800BC8820 /* Login.storyboard */; };
 		9F5930DE21BD676D00BC8820 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F5930DD21BD676D00BC8820 /* Assets.xcassets */; };
 		9F5930E121BD676D00BC8820 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F5930DF21BD676D00BC8820 /* LaunchScreen.storyboard */; };
-		9FCDA0C821E4F80F0091DC6B /* TextParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCDA0C721E4F80F0091DC6B /* TextParse.swift */; };
+		9FCDA0C821E4F80F0091DC6B /* TextRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCDA0C721E4F80F0091DC6B /* TextRecognizer.swift */; };
 		9FCED22C21FA051500E95622 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FCED22B21FA051500E95622 /* Main.storyboard */; };
 		9FD43A6021FDA02F00BDF041 /* SavedData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD43A5F21FDA02F00BDF041 /* SavedData+CoreDataClass.swift */; };
 		9FD43A6221FDA05500BDF041 /* SavedData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD43A6121FDA05500BDF041 /* SavedData+CoreDataProperties.swift */; };
-		9FD43A6621FDEE1D00BDF041 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD43A6521FDEE1D00BDF041 /* SignUp.swift */; };
 		9FD43A6A21FE0D2100BDF041 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD43A6921FE0D2100BDF041 /* LoginViewController.swift */; };
 		9FE2290621F7846C0066AC45 /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE2290521F7846C0066AC45 /* SaveData.swift */; };
 		9FE2290A21F78B050066AC45 /* SavedDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE2290921F78B050066AC45 /* SavedDataViewController.swift */; };
@@ -63,7 +60,6 @@
 		9F276EAE21F1CEF90018B2A7 /* SavedData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedData.xcdatamodel; sourceTree = "<group>"; };
 		9F276EB921F35F1A0018B2A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9F276EBA21F35F1A0018B2A7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F2D787C21F3D8C800E34B4D /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		9F2D787F21F3E5FF00E34B4D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		9F2D788121F3E65500E34B4D /* DataStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructure.swift; sourceTree = "<group>"; };
 		9F2D788721F463B800E34B4D /* Stored.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Stored.storyboard; sourceTree = "<group>"; };
@@ -77,11 +73,10 @@
 		9F5930E721BD676D00BC8820 /* Text RecignizeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Text RecignizeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5930F221BD676D00BC8820 /* Text RecignizeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Text RecignizeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F986B0421FE47F1009F86E1 /* Text Recignize.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Text Recignize.entitlements"; sourceTree = "<group>"; };
-		9FCDA0C721E4F80F0091DC6B /* TextParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextParse.swift; sourceTree = "<group>"; };
+		9FCDA0C721E4F80F0091DC6B /* TextRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognizer.swift; sourceTree = "<group>"; };
 		9FCED22B21FA051500E95622 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9FD43A5F21FDA02F00BDF041 /* SavedData+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SavedData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9FD43A6121FDA05500BDF041 /* SavedData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedData+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		9FD43A6521FDEE1D00BDF041 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		9FD43A6921FE0D2100BDF041 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9FE2290521F7846C0066AC45 /* SaveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
 		9FE2290921F78B050066AC45 /* SavedDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDataViewController.swift; sourceTree = "<group>"; };
@@ -143,7 +138,7 @@
 		9F276E8921F13BD30018B2A7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				9F276EAD21F1CEF90018B2A7 /* SavedData.xcdatamodeld */,
+				9F276EAD21F1CEF90018B2A7 /* Model.xcdatamodeld */,
 				9F2D788121F3E65500E34B4D /* DataStructure.swift */,
 				9F2D787F21F3E5FF00E34B4D /* CoreDataManager.swift */,
 				9FD43A5F21FDA02F00BDF041 /* SavedData+CoreDataClass.swift */,
@@ -155,10 +150,10 @@
 		9F276EB021F1D0290018B2A7 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				9F5930DA21BD676800BC8820 /* Login.storyboard */,
 				9F5930DF21BD676D00BC8820 /* LaunchScreen.storyboard */,
-				9F2D788721F463B800E34B4D /* Stored.storyboard */,
+				9F5930DA21BD676800BC8820 /* Login.storyboard */,
 				9FCED22B21FA051500E95622 /* Main.storyboard */,
+				9F2D788721F463B800E34B4D /* Stored.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -229,9 +224,7 @@
 		9FCDA0C921E5E8E00091DC6B /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				9FCDA0C721E4F80F0091DC6B /* TextParse.swift */,
-				9F2D787C21F3D8C800E34B4D /* SignIn.swift */,
-				9FD43A6521FDEE1D00BDF041 /* SignUp.swift */,
+				9FCDA0C721E4F80F0091DC6B /* TextRecognizer.swift */,
 				9FE2290521F7846C0066AC45 /* SaveData.swift */,
 				9F219C7721F85D3E009C3614 /* AlertController.swift */,
 			);
@@ -358,7 +351,6 @@
 				9F276EBB21F35F1A0018B2A7 /* GoogleService-Info.plist in Resources */,
 				9F5930DE21BD676D00BC8820 /* Assets.xcassets in Resources */,
 				9FCED22C21FA051500E95622 /* Main.storyboard in Resources */,
-				9F276EBC21F35F1A0018B2A7 /* Info.plist in Resources */,
 				9F5930DC21BD676800BC8820 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,17 +521,15 @@
 				9F219C7821F85D3E009C3614 /* AlertController.swift in Sources */,
 				9FD43A6021FDA02F00BDF041 /* SavedData+CoreDataClass.swift in Sources */,
 				9F2D788B21F465A800E34B4D /* PrototypeCell.swift in Sources */,
-				9F276EAF21F1CEF90018B2A7 /* SavedData.xcdatamodeld in Sources */,
+				9F276EAF21F1CEF90018B2A7 /* Model.xcdatamodeld in Sources */,
 				9F2D788021F3E5FF00E34B4D /* CoreDataManager.swift in Sources */,
 				9FE2290621F7846C0066AC45 /* SaveData.swift in Sources */,
 				9F2D788221F3E65500E34B4D /* DataStructure.swift in Sources */,
-				9FD43A6621FDEE1D00BDF041 /* SignUp.swift in Sources */,
-				9FCDA0C821E4F80F0091DC6B /* TextParse.swift in Sources */,
+				9FCDA0C821E4F80F0091DC6B /* TextRecognizer.swift in Sources */,
 				9FE2290A21F78B050066AC45 /* SavedDataViewController.swift in Sources */,
 				9F5930D921BD676800BC8820 /* TextRecognizeViewController.swift in Sources */,
 				9FD43A6A21FE0D2100BDF041 /* LoginViewController.swift in Sources */,
 				9FD43A6221FDA05500BDF041 /* SavedData+CoreDataProperties.swift in Sources */,
-				9F2D787D21F3D8C800E34B4D /* SignIn.swift in Sources */,
 				9F5930D721BD676800BC8820 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -877,13 +867,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9F276EAD21F1CEF90018B2A7 /* SavedData.xcdatamodeld */ = {
+		9F276EAD21F1CEF90018B2A7 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				9F276EAE21F1CEF90018B2A7 /* SavedData.xcdatamodel */,
 			);
 			currentVersion = 9F276EAE21F1CEF90018B2A7 /* SavedData.xcdatamodel */;
-			path = SavedData.xcdatamodeld;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

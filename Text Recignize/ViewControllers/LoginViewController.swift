@@ -11,18 +11,17 @@ import Firebase
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var email: UITextField?
+    @IBOutlet weak var password: UITextField?
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
-        Auth.auth().addStateDidChangeListener() { auth, user in
+        Auth.auth().addStateDidChangeListener { _, user in
             if user != nil {
                 self.performSegue(withIdentifier: "loginToRecognize", sender: nil)
-                self.email.text = nil
-                self.password.text = nil
+                self.email?.text = nil
+                self.password?.text = nil
             }
         }
         // Do any additional setup after loading the view.
@@ -30,17 +29,17 @@ class LoginViewController: UIViewController {
     
     @IBAction func goToSignUp(_ sender: UIButton) {
         
-        let alert = UIAlertController(title: "Register", message: "Register", preferredStyle: .alert)
         let alertNotification = Alert()
+        let alert = UIAlertController(title: "Register", message: "Register", preferredStyle: .alert)
         let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
-            let emailField = alert.textFields![0]
-            let passwordField = alert.textFields![1]
+            let emailField = alert.textFields?[0]
+            let passwordField = alert.textFields?[1]
             
-            Auth.auth().createUser(withEmail: emailField.text!, password: passwordField.text!) { user, error in
+            Auth.auth().createUser(withEmail: emailField?.text ?? "", password: passwordField?.text ?? "") { user, error in
                 if error == nil {
-                    Auth.auth().signIn(withEmail: self.email.text!, password: self.password.text!)
+                    Auth.auth().signIn(withEmail: self.email?.text ?? "", password: self.password?.text ?? "")
                 } else {
-                    self.present((alertNotification.alert(errorText: "Login or password is incorrect")), animated: true, completion: nil)
+                    self.present((alertNotification.alert(errorText: error?.localizedDescription)), animated: true, completion: nil)
                 }
             }
         }
@@ -60,27 +59,32 @@ class LoginViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-
-    
+    func isValidEmail(testStr: String) -> Bool {
+        
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
+    }
     
     @IBAction func login(_ sender: Any) {
     
         let alert = Alert()
-        if alert.isValidEmail(testStr: email.text!) {
-            guard
-                let email = email.text, let password = password.text, email.count > 0, password.count > 0
-                else {
-                    return
-            }
+        if isValidEmail(testStr: email?.text ?? ""), let _ = password?.text {
+            
+            guard let email = email?.text, let password = password?.text, email.count > 0, password.count > 0
+                else { return }
+            
             Auth.auth().signIn(withEmail: email, password: password) { user, error in
                 if let error = error, user == nil {
-                    let alert = UIAlertController(title: "Sign In Failed", message: error.localizedDescription, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default))
-                    self.present(alert, animated: true, completion: nil)
+                    self.present(alert.alert(errorText: error.localizedDescription), animated: true, completion: nil)
                 }
             }
         } else {
-            present((alert.alert(errorText: "Email's form is incorrect")), animated: true, completion: nil)
+            if email?.text?.isEmpty ?? false || password?.text?.isEmpty ?? false {
+                present((alert.alert(errorText: "Email's or password form is empty")), animated: true, completion: nil)
+            } else {
+                present((alert.alert(errorText: "Email's form is incorrect")), animated: true, completion: nil)
+            }
         }
     }
     /*
@@ -92,5 +96,4 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

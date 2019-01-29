@@ -11,6 +11,7 @@ import CoreData
 
 @objc(RecognizedData)
 public class RecognizedData: NSManagedObject {
+    
     convenience init() {
         self.init(context: CoreDataManager.instance.managedObjectContext)
     }

@@ -9,6 +9,7 @@
 import UIKit
 
 struct DataStructure {
+    
     var recignizedText: String
     var recognizedImage: UIImage
     var account: String
