@@ -17,21 +17,5 @@ class Alert  {
         alert.addAction(alertButton)
         return alert
     }
-    
-    func register() {
-        let alert = UIAlertController(title: "Register", message: "Register", preferredStyle: .alert)
-        let saveAction = UIAlertAction(title: "Save", style: .default)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        
-        alert.addTextField { textEmail in textEmail.placeholder = "Enter your email"
-        }
-        
-        alert.addTextField { textPassword in textPassword.isSecureTextEntry = true
-            textPassword.placeholder = "Enter your password"
-        }
-        
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-    }
 }
 
