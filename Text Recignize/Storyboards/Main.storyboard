@@ -60,6 +60,10 @@
                                                     </barButtonItem>
                                                 </items>
                                             </toolbar>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ah8-sS-4yE">
+                                                <rect key="frame" x="169" y="251" width="37" height="37"/>
+                                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -87,10 +91,6 @@
                                     <action selector="signOut:" destination="gvm-9k-71f" eventType="touchUpInside" id="XKt-5H-0SJ"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="GbJ-rg-uQo">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -100,8 +100,10 @@
                             <constraint firstItem="SK9-nN-GeQ" firstAttribute="bottom" secondItem="y6D-C4-PUO" secondAttribute="bottom" id="Lcb-0u-KlL"/>
                             <constraint firstItem="7Bc-8v-QDz" firstAttribute="leading" secondItem="SK9-nN-GeQ" secondAttribute="leading" constant="8" id="O1F-l5-jqu"/>
                             <constraint firstItem="HO9-Yg-3QG" firstAttribute="leading" secondItem="SK9-nN-GeQ" secondAttribute="leading" id="SWC-oO-eE1"/>
+                            <constraint firstItem="ah8-sS-4yE" firstAttribute="centerY" secondItem="SK9-nN-GeQ" secondAttribute="centerY" id="U69-Ux-dK6"/>
                             <constraint firstItem="HO9-Yg-3QG" firstAttribute="bottom" secondItem="SK9-nN-GeQ" secondAttribute="bottom" id="aP2-Ll-6o0"/>
                             <constraint firstItem="7Bc-8v-QDz" firstAttribute="top" secondItem="SK9-nN-GeQ" secondAttribute="top" constant="8" id="dTc-IV-Grc"/>
+                            <constraint firstItem="ah8-sS-4yE" firstAttribute="centerX" secondItem="SK9-nN-GeQ" secondAttribute="centerX" id="eI7-gk-4Ef"/>
                             <constraint firstItem="y6D-C4-PUO" firstAttribute="leading" secondItem="SK9-nN-GeQ" secondAttribute="leading" id="orp-0b-Pb0"/>
                             <constraint firstItem="SK9-nN-GeQ" firstAttribute="trailing" secondItem="7Bc-8v-QDz" secondAttribute="trailing" constant="8" id="xnj-FD-bmm"/>
                         </constraints>
@@ -109,7 +111,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="1Wh-FO-Ijg"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="GbJ-rg-uQo" id="TPd-hB-Dw2"/>
+                        <outlet property="activityIndicator" destination="ah8-sS-4yE" id="rwL-vP-kBW"/>
                         <outlet property="imageView" destination="7Bc-8v-QDz" id="3zh-sA-owb"/>
                         <outlet property="recognizedText" destination="Zj7-k6-fu5" id="fgM-de-0xf"/>
                     </connections>

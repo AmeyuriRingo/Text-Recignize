@@ -20,6 +20,7 @@ class TextRecognizeViewController: UIViewController {
     
     private var imagePicker = UIImagePickerController()
     private var imagePickingCompletion: ((UIImage?) -> Void)?
+    private var indicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     var saveData = SaveData()
     
@@ -74,18 +75,17 @@ class TextRecognizeViewController: UIViewController {
         let alert = Alert()
         openLibrary { [weak self] image in
             guard let `self` = self, let newImage = image else { return }
-//            self.activityIndicator.startAnimating()
+            self.activityIndicator.startAnimating()
             TextRecognizer.textRecognize(image: newImage) { [weak self] text in
-                self?.activityIndicator.startAnimating()
                 self?.recognizedText.text = text
                 if (self?.recognizedText.text.isEmpty)! {
                     self?.present((alert.alert(errorText: "Text can't be recognized or not found")), animated: true, completion: nil)
                 } else {
                     self!.saveData.localStorageSave(text: text ?? "", image: newImage)
+                    self?.activityIndicator.stopAnimating()
                 }
             }
             self.imageView.image = image
-            self.activityIndicator.stopAnimating()
         }
         
     }
